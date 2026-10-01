@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Formulario de Paciente</title>
+</head>
+
+<body>
+
+<h1>Registrar / Editar Paciente</h1>
+
+<form th:action="@{/guardar}" th:object="${paciente}" method="post">
+
+    <input type="hidden" th:field="*{id}">
+
+    <label>Documento:</label>
+    <input type="text" th:field="*{documento}" required>
+    <br><br>
+
+    <label>Nombre:</label>
+    <input type="text" th:field="*{nombre}" required>
+    <br><br>
+
+    <label>Apellido:</label>
+    <input type="text" th:field="*{apellido}" required>
+    <br><br>
+
+    <label>Teléfono:</label>
+    <input type="text" th:field="*{telefono}">
+    <br><br>
+
+    <label>Correo:</label>
+    <input type="email" th:field="*{correo}">
+    <br><br>
+
+    <label>Fecha de nacimiento:</label>
+    <input type="date" th:field="*{fechaNacimiento}">
+    <br><br>
+
+    <button type="submit">Guardar paciente</button>
+
+</form>
+
+<br>
+
+<a th:href="@{/pacientes}">Volver a pacientes</a>
+
+</body>
+</html>
